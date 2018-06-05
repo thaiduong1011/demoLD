@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.baitaprandom.sunshine.listview_demo.MainActivity">
+
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="API đăng nhập"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtAPISignIn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtAPISignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Link api đăng nhập"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtAcc"
+        app:layout_constraintStart_toStartOf="@+id/txtTitle"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+    <EditText
+        android:id="@+id/edtAcc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Tham số acc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTitle1"
+        app:layout_constraintEnd_toStartOf="@+id/edtPwd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn" />
+
+    <EditText
+        android:id="@+id/edtPwd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Tham số pwd"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edtAcc"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn" />
+
+    <TextView
+        android:id="@+id/txtTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="API vào máy"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtAPISignIn1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAcc" />
+
+    <EditText
+        android:id="@+id/edtAcc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tham số acc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTitle2"
+        app:layout_constraintStart_toStartOf="@+id/edtAPISignIn1"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn1" />
+
+    <EditText
+        android:id="@+id/edtPwd1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Tham số pwd"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edtAcc1"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn1" />
+
+    <EditText
+        android:id="@+id/edtAPISignIn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Link api đăng nhập"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtAcc1"
+        app:layout_constraintStart_toStartOf="@+id/txtTitle1"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle1" />
+
+    <TextView
+        android:id="@+id/txtTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="API lấy thông số"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtAPISignIn2"
+        app:layout_constraintStart_toStartOf="@+id/edtAcc1"
+        app:layout_constraintTop_toBottomOf="@+id/edtAcc1" />
+
+    <EditText
+        android:id="@+id/edtAcc2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tham số acc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtTitle3"
+        app:layout_constraintStart_toStartOf="@+id/edtAPISignIn2"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn2" />
+
+    <EditText
+        android:id="@+id/edtPwd2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Tham số pwd"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edtAcc2"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn2" />
+
+    <EditText
+        android:id="@+id/edtAPISignIn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Link api đăng nhập"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtAcc2"
+        app:layout_constraintStart_toStartOf="@+id/txtTitle2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle2" />
+
+    <TextView
+        android:id="@+id/txtTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="API lấy thông tin từ account"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtAPISignIn3"
+        app:layout_constraintStart_toStartOf="@+id/edtAcc2"
+        app:layout_constraintTop_toBottomOf="@+id/edtAcc2" />
+
+    <EditText
+        android:id="@+id/edtAcc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Tham số acc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn3" />
+
+    <EditText
+        android:id="@+id/edtAPISignIn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Link api đăng nhập"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/edtAcc3"
+        app:layout_constraintStart_toStartOf="@+id/edtAcc3"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle3" />
+
+    <EditText
+        android:id="@+id/edtPwd3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Tham số pwd"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/edtAcc3"
+        app:layout_constraintTop_toBottomOf="@+id/edtAPISignIn3" />
+
+</android.support.constraint.ConstraintLayout>
