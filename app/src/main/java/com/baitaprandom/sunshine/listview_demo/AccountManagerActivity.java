@@ -1,64 +1,95 @@
 package com.baitaprandom.sunshine.listview_demo;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class AccountManagerActivity extends AppCompatActivity {
+public class AccountManagerActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-   public static ArrayList<Account> accounts;
-    RecyclerView recyclerView;
-    AccountAdpater accountAdpater;
+    Spinner spinner;
+    ArrayAdapter<String> adapterSpinnerDanhMuc;
+    EditText edtMess;
+    Button btnSend;
+
+    List<String> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_manager);
 
-        initView();
+        AnhXa();
+
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
-    public void initView(){
-        recyclerView = findViewById(R.id.account_recyclerView);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-        DividerItemDecoration decoration = new DividerItemDecoration(this, layoutManager.getOrientation());
-        recyclerView.addItemDecoration(decoration);
+    void AnhXa(){
+        spinner = findViewById(R.id.spinner);
+        edtMess = findViewById(R.id.edtMess);
+        btnSend = findViewById(R.id.btnSend);
 
-        accounts = new ArrayList<>();
-        accounts.add(new Account("tk1", "123456"));
-        accounts.add(new Account("tk2", "123456"));
-        accounts.add(new Account("tk3", "123456"));
-        accounts.add(new Account("tk4", "123456"));
-        accounts.add(new Account("tk5", "123456"));
-        accounts.add(new Account("tk6", "123456"));
+        list.add("Nhà cái 1");
+        list.add("Nhà cái 2");
+        list.add("Nhà cái 3");
+        list.add("Nhà cái 4");
+        list.add("Nhà cái 5");
 
-        accountAdpater = new AccountAdpater(accounts, this);
-        recyclerView.setAdapter(accountAdpater);
+        adapterSpinnerDanhMuc = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list){
+
+            public View getView(int position, View convertView,ViewGroup parent) {
+
+                View v = super.getView(position, convertView, parent);
+
+                ((TextView) v).setTextSize(16);
+                ((TextView) v).setTextColor(Color.BLACK);
+
+                return v;
+
+            }
+
+            public View getDropDownView(int position, View convertView,ViewGroup parent) {
+
+                View v = super.getDropDownView(position, convertView,parent);
+
+                ((TextView) v).setTextSize(16);
+                ((TextView) v).setTextColor(Color.BLACK);
+                ((TextView) v).setGravity(Gravity.CENTER);
+
+                return v;
+
+            }
+
+        };
+
+        spinner.setAdapter(adapterSpinnerDanhMuc);
+    }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add, menu);
-        return true;
-    }
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getTitle().toString().equals("Add")){
-            AddAccountDialog dialog = new AddAccountDialog(this, accountAdpater);
-            dialog.show();
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
